@@ -15,7 +15,7 @@ class StatsTopBarVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    buttonArray = [chartButton1,chartButton2,chartButton3,chartButton4]
+    buttonArray = [chartButton1,chartButton2,chartButton4]
     
   }
  

@@ -16,12 +16,14 @@ class StatPage3Controller: UIViewController {
     }
     
     func animateGraph(){
-        setupChart1()
-        setupChart2()
-        setupChart3()
-        chartRestingHeart.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
-        chartUserWeight.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
-        chartBMI.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
+      
+          
+//        setupChart1()
+//        setupChart2()
+//        setupChart3()
+//        chartRestingHeart.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
+//        chartUserWeight.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
+//        chartBMI.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
     }
   
   func setupChart1(){
