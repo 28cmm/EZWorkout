@@ -85,7 +85,6 @@ class RealmDataMangers {
     let results = realm.objects(UserRealm.self).first!
     return results.workoutArray[workoutNum].excerciseArray[excersierNum]
   }
-  // static func save()
 }
 
 

@@ -20,7 +20,7 @@ class SetUpVC: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var nextBtn: UIButton!
     
     
-    var gender = "male"
+    var gender = "nil"
     let lightGreyColor: UIColor = UIColor(red: 197 / 255, green: 205 / 255, blue: 205 / 255, alpha: 1.0)
     let darkGreyColor: UIColor = UIColor(red: 52 / 255, green: 42 / 255, blue: 61 / 255, alpha: 1.0)
     let overcastBlueColor: UIColor = UIColor(red: 0, green: 187 / 255, blue: 204 / 255, alpha: 1.0)
@@ -99,17 +99,40 @@ class SetUpVC: UIViewController,UITextFieldDelegate {
     
     
     @IBAction func nextAction(_ sender: Any) {
-        guard let height = heightTxt.text,
-            let weight = weightTxt.text else{
-                return
+        if let height = heightTxt.text,
+            let weight = weightTxt.text,
+            gender != "nil"{
+            if Int(height) != nil, Int(weight) != nil{
+                let realm = try! Realm()
+                let userState = RealmDataMangers.createUserStat(date: Date(), weight: Int(weight)!, restingHeart: nil)
+                let user = RealmDataMangers.createUser(name: "Jason", gender: gender, Date: Date(), userStatArray: [userState], workoutArray: [])
+                
+                RealmDataMangers.save(object: user, realm: realm)
+                RealmDataMangers.createFakeYear()
+                UserRealm.curUser = realm.objects(UserRealm.self).first!
+                dismiss(animated: true, completion: nil)
+            }else{
+                let alert = UIAlertController(title: "please enter numbers and Select the gender", message: "", preferredStyle: UIAlertController.Style.alert)
+                
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+            
+        }else{
+            let alert = UIAlertController(title: "Please enter all the info", message: "" ,preferredStyle: UIAlertController.Style.alert)
+            
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
         }
-        let realm = try! Realm()
-        let userState = RealmDataMangers.createUserStat(date: Date(), weight: Int(weight)!, restingHeart: nil)
-        let user = RealmDataMangers.createUser(name: "Jason", gender: gender, Date: Date(), userStatArray: [userState], workoutArray: [])
         
-        RealmDataMangers.save(object: user, realm: realm)
-        UserRealm.curUser = realm.objects(UserRealm.self).first!
-        dismiss(animated: true, completion: nil)
+       
         
         
     }

@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     })
     Realm.Configuration.defaultConfiguration = config
     RealmDataMangers.retrieveUser()
-     print(Realm.Configuration.defaultConfiguration.fileURL!)
+    print(Realm.Configuration.defaultConfiguration.fileURL!)
     return true
   }
 
