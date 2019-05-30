@@ -108,7 +108,6 @@ class SetUpVC: UIViewController,UITextFieldDelegate {
                 let user = RealmDataMangers.createUser(name: "Jason", gender: gender, Date: Date(), userStatArray: [userState], workoutArray: [])
                 
                 RealmDataMangers.save(object: user, realm: realm)
-                RealmDataMangers.createFakeYear()
                 UserRealm.curUser = realm.objects(UserRealm.self).first!
                 dismiss(animated: true, completion: nil)
             }else{

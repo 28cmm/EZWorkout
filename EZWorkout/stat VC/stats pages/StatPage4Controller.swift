@@ -47,10 +47,6 @@ class StatPage4Controller: UIViewController {
       closure(.day)
       break
     case 1:
-      //TODO figure out week
-      //setupChart1(timeFrame: .day)
-      break
-    case 2:
       
       closure(.month)
       break
