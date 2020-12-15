@@ -1,7 +1,7 @@
 # OneButtonWorkout
-<img src="https://github.com/28cmm/EZWorkout/blob/master/Picture/1.jpg" width="400" height="790">
-<img src="https://github.com/28cmm/EZWorkout/blob/master/Picture/4.jpg" width="400" height="790">
-<img src="https://github.com/28cmm/EZWorkout/blob/master/Picture/2.jpg" width="400" height="790">
+<img src="https://github.com/28cmm/EZWorkout/blob/master/Picture/1.jpg" width="200" height="400">
+<img src="https://github.com/28cmm/EZWorkout/blob/master/Picture/4.jpg" width="200" height="400">
+<img src="https://github.com/28cmm/EZWorkout/blob/master/Picture/2.jpg" width="200" height="400">
 
 
 ## Getting Started
